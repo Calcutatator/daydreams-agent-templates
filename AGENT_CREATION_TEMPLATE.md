@@ -6,11 +6,23 @@ Compatible with: Moltbot, Clawdbot, Claude, and other AI assistants
 
 ---
 
-## 📝 STEP 1: Define Your Agent
+## 📋 How To Use
 
-**Fill in these details about the agent YOU want to create:**
+1. **Fill in your details** at the top of the code block below (replace the empty `""`)
+2. **Copy the ENTIRE code block** (both your details AND the prompt below)
+3. **Send to your AI** — it will build your complete agent
 
-```bash
+**Simple as that.** 💀
+
+---
+
+## 🚀 The Prompt (Fill top section, copy everything, send to AI)
+
+```
+# ============================================
+# FILL IN YOUR AGENT DETAILS HERE
+# ============================================
+
 # What should your agent be called?
 AGENT_NAME=""
 
@@ -43,33 +55,12 @@ AGENT_SKILLS=""
 
 # OPTIONAL - Domains (e.g., "weather, climate")
 AGENT_DOMAINS=""
-```
 
----
+# ============================================
+# DON'T EDIT BELOW THIS LINE
+# ============================================
 
-## 📋 HOW TO USE THIS TEMPLATE
-
-**Simple 3-step process:**
-
-1. ✅ **Fill STEP 1 above** - Replace empty `""` with your agent details
-2. ✅ **Copy this ENTIRE file** - Both STEP 1 (with your values) AND STEP 2 (below)
-3. ✅ **Send everything to your AI** - It will read your STEP 1 values and build your agent
-
-**You do NOT need to edit STEP 2!** Your AI will automatically use your STEP 1 values when it sees `${VARIABLE}` syntax below.
-
-**Example:**
-- You fill: `AGENT_NAME="Weather Oracle"` in STEP 1
-- STEP 2 says: `Name: ${AGENT_NAME}`
-- AI reads both and creates an agent named "Weather Oracle"
-
----
-
-## 🚀 STEP 2: The Prompt (Copy with STEP 1 and send to AI)
-
-**Your AI will use your STEP 1 values when building the agent described below:**
-
-```
-I want to create a custom x402-enabled agent. Build it using the configuration I've provided.
+I want to create a custom x402-enabled agent. Build it using the configuration I've provided above.
 
 ========================================
 MY AGENT CONFIGURATION
@@ -212,7 +203,7 @@ FACILITATOR CONFIGURATION
 
 Set up the Daydreams facilitator like this:
 
-\`\`\`typescript
+```typescript
 import { createFacilitator } from "@daydreamsai/facilitator";
 import { createPrivateKeyEvmSigner } from "@daydreamsai/facilitator/signers";
 
@@ -220,7 +211,7 @@ const facilitator = createFacilitator({
   facilitatorUrl: "https://facilitator.daydreams.systems",
   evmSigners: [{
     signer: createPrivateKeyEvmSigner({
-      privateKey: process.env.EVM_PRIVATE_KEY as \`0x\${string}\`,
+      privateKey: process.env.EVM_PRIVATE_KEY as `0x${string}`,
       network: "base",
       rpcUrl: "https://mainnet.base.org",
     }),
@@ -228,7 +219,7 @@ const facilitator = createFacilitator({
     schemes: ["exact"],
   }],
 });
-\`\`\`
+```
 
 ========================================
 PROJECT STRUCTURE
@@ -236,7 +227,7 @@ PROJECT STRUCTURE
 
 Create this file structure:
 
-\`\`\`
+```
 ${AGENT_NAME}-agent/
 ├── src/
 │   └── index.ts           # Main agent code
@@ -246,7 +237,7 @@ ${AGENT_NAME}-agent/
 ├── README.md             # Complete documentation
 ├── test-agent.ts         # Test script
 └── erc8004-metadata.json # On-chain metadata (optional)
-\`\`\`
+```
 
 ========================================
 FILE CONTENTS
@@ -262,18 +253,18 @@ Generate these files with appropriate content:
    - dependencies: all required packages
 
 2. **.env.example**
-   \`\`\`
+   ```
    EVM_PRIVATE_KEY=0x...
    PORT=${PORT}
    EVM_RPC_URL=https://mainnet.base.org
-   \`\`\`
+   ```
 
 3. **.gitignore**
-   \`\`\`
+   ```
    node_modules/
    .env
    *.log
-   \`\`\`
+   ```
 
 4. **README.md**
    Include:
@@ -292,7 +283,7 @@ Generate these files with appropriate content:
    - Instructions for testing with payment
 
 6. **erc8004-metadata.json**
-   \`\`\`json
+   ```json
    {
      "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
      "name": "${AGENT_NAME}",
@@ -310,7 +301,7 @@ Generate these files with appropriate content:
      "active": true,
      "x402support": true
    }
-   \`\`\`
+   ```
 
 ========================================
 SECURITY REQUIREMENTS
@@ -353,20 +344,20 @@ DEPLOYMENT INSTRUCTIONS
 Include in README.md:
 
 **Local Development:**
-\`\`\`bash
+```bash
 bun install
 cp .env.example .env
 # Edit .env with your EVM_PRIVATE_KEY
 bun dev
-\`\`\`
+```
 
 **Testing:**
-\`\`\`bash
+```bash
 # Test endpoints
 curl http://localhost:${PORT}/
 curl http://localhost:${PORT}/health
 curl http://localhost:${PORT}/x402/supported
-\`\`\`
+```
 
 **Production Deployment:**
 1. Deploy to VPS (DigitalOcean, AWS, Railway, etc.)
@@ -376,14 +367,14 @@ curl http://localhost:${PORT}/x402/supported
 5. Monitor logs and wallet balance
 
 **xGate Registration:**
-\`\`\`
+```
 # In Claude/Cursor with xGate MCP:
 install_resource({
   name: "${AGENT_NAME.toLowerCase().replace(/\s+/g, '_')}",
   url: "http://${PUBLIC_IP}:${PORT}/${ENDPOINT_NAME}",
   method: "POST"
 })
-\`\`\`
+```
 
 ========================================
 TESTING CHECKLIST
@@ -519,6 +510,6 @@ PORT="8095"
 
 ---
 
-*Template Version: 2.0.0*  
+*Template Version: 2.1.0*  
 *Last Updated: 2026-01-29*  
 *Create any x402-enabled agent on the Daydreams stack*
