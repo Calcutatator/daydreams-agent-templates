@@ -1,13 +1,25 @@
 # ⚡ Quick Agent Creation Prompt
 
-**Use this template to create YOUR x402-enabled agent**
+**Fast-track creation for YOUR x402-enabled agent**
 
 ---
 
-## 📝 DEFINE YOUR AGENT (Fill in your details below)
+## 📋 How To Use
 
-```bash
-# What agent do you want to create? Fill these in:
+1. **Fill in your details** at the top of the code block below
+2. **Copy the ENTIRE code block** (both your details AND the prompt)
+3. **Send to your AI** — it will build your agent
+
+**That's it.** 💀
+
+---
+
+## 🚀 The Prompt (Fill top section, copy everything, send to AI)
+
+```
+# ============================================
+# FILL IN YOUR AGENT DETAILS HERE
+# ============================================
 
 AGENT_NAME=""
 # Example: "Weather Oracle", "Crypto Price Bot", "Image Analyzer"
@@ -17,45 +29,25 @@ AGENT_DESCRIPTION=""
 # Be specific about what your agent does
 
 ENDPOINT_NAME=""
-# Example: "weather", "price", "analyze" 
+# Example: "weather", "price", "analyze"
 # This becomes POST /your-endpoint
 
 PRICE_USDC=""
 # Example: "0.05" (5 cents), "0.10" (10 cents)
-# How much to charge per request
 
 EVM_PRIVATE_KEY=""
 # Your Ethereum wallet private key (0x...)
-# Keep this SECRET! Agent uses this to receive payments
+# KEEP SECRET - this receives payments
 
-# Optional (improves discoverability):
+# OPTIONAL (improves discoverability):
 AGENT_IMAGE_URL=""
-# Example: "https://example.com/my-agent-icon.png"
-
 AGENT_SKILLS=""
-# Example: "data/weather, api/forecast"
-# What skills/capabilities does your agent have?
-
 AGENT_DOMAINS=""
-# Example: "weather, climate"
-# What domains/categories does it cover?
-```
 
----
+# ============================================
+# DON'T EDIT BELOW THIS LINE
+# ============================================
 
-## 📋 HOW TO USE
-
-1. **Fill the variables above** (AGENT_NAME, AGENT_DESCRIPTION, etc.)
-2. **Copy this ENTIRE file** (your variables + the prompt below)
-3. **Send everything to your AI** (Moltbot, Claude, etc.)
-
-**That's it!** Your AI will see your values above and use them in the prompt below. You don't need to edit anything in the prompt section.
-
----
-
-## 🤖 THE PROMPT (Copy with your variables and send to AI)
-
-```
 Create a complete x402-enabled agent on the Daydreams stack using this configuration:
 
 ========================================
@@ -231,23 +223,26 @@ Use real, working implementations - no placeholders.
 
 ---
 
-## ✅ Before Sending, Verify You Filled:
+## ✅ Pre-Flight Checklist
 
+Before sending, verify you've filled in:
+
+**Required:**
 - [ ] AGENT_NAME - What's your agent called?
-- [ ] AGENT_DESCRIPTION - What does it do?
-- [ ] ENDPOINT_NAME - What's the main API endpoint?
-- [ ] PRICE_USDC - How much per request?
+- [ ] AGENT_DESCRIPTION - What does it do? (be specific!)
+- [ ] ENDPOINT_NAME - Main API endpoint name
+- [ ] PRICE_USDC - Price per request
 - [ ] EVM_PRIVATE_KEY - Your wallet key (keep secret!)
 
-Optional but recommended:
-- [ ] AGENT_IMAGE_URL - Icon/avatar for your agent
-- [ ] AGENT_SKILLS - Comma-separated capabilities
-- [ ] AGENT_DOMAINS - Comma-separated categories
+**Optional:**
+- [ ] AGENT_IMAGE_URL - Icon/avatar
+- [ ] AGENT_SKILLS - Capabilities (e.g., "data/weather, api/forecast")
+- [ ] AGENT_DOMAINS - Categories (e.g., "weather, climate")
 
 **You do NOT need to fill:**
-- ❌ PORT - AI will choose and explain in deployment guide
-- ❌ PUBLIC_IP - AI will provide instructions to get it
-- ❌ MCP_URL - Not needed for basic agent creation
+- ❌ PORT - AI will choose and explain
+- ❌ PUBLIC_IP - AI will provide instructions
+- ❌ MCP_URL - Not needed for basic creation
 
 ---
 
@@ -258,7 +253,7 @@ AGENT_NAME="Weather Oracle"
 AGENT_DESCRIPTION="Provides real-time weather forecasts and current conditions for any location worldwide using OpenWeatherMap API"
 ENDPOINT_NAME="weather"
 PRICE_USDC="0.05"
-EVM_PRIVATE_KEY="0xabc123..." # (never share publicly!)
+EVM_PRIVATE_KEY="0xabc123..." # (never share!)
 AGENT_IMAGE_URL="https://example.com/weather-icon.png"
 AGENT_SKILLS="data/weather, api/forecast, location/geocoding"
 AGENT_DOMAINS="weather, climate, forecasting"
@@ -266,18 +261,15 @@ AGENT_DOMAINS="weather, climate, forecasting"
 
 ---
 
-## 🎯 What Happens Next
+## 🎯 What You'll Get
 
-Your AI will:
-1. Read your agent configuration
-2. Choose appropriate port (default 8090)
-3. Generate complete TypeScript code specific to YOUR agent
-4. Use **standard output formats** for your agent's category
-5. Create deployment instructions explaining how to:
-   - Find your server's IP
-   - Configure firewall
-   - Test external access
-6. Include all necessary files (package.json, README, etc.)
+Your AI will generate:
+
+✅ Complete TypeScript code specific to YOUR agent  
+✅ Standard output formats for your agent's category  
+✅ All configuration files (package.json, .env.example, etc.)  
+✅ Deployment instructions (IP, firewall, testing)  
+✅ Security best practices  
 
 **Time to working agent:** 5-10 minutes
 
@@ -287,16 +279,14 @@ Your AI will:
 
 **Never commit EVM_PRIVATE_KEY to git or share it publicly!**
 
-The generated code will use environment variables to keep it secure.
-
 ---
 
-## 📚 Need More Help?
+## 📚 Need More Details?
 
-- **Full Template:** See AGENT_CREATION_TEMPLATE.md for detailed version
+- **Full Template:** See AGENT_CREATION_TEMPLATE.md for comprehensive version
 - **Architecture:** See AGENT_ARCHITECTURE.md for system design
 - **Examples:** See EXAMPLE_AGENT.ts for working code
 
 ---
 
-*Template for creating any x402-enabled agent on the Daydreams stack*
+*Quick template for creating x402-enabled agents on Daydreams stack*
