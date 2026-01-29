@@ -299,9 +299,9 @@ Contributions welcome! Please:
 ## 🐛 Issues & Support
 
 **Found a bug or have a question?**
-- Open an [issue](https://github.com/[YOUR_USERNAME]/daydreams-agent-templates/issues)
+- Open an [issue](https://github.com/Calcutatator/daydreams-agent-templates/issues)
 - Join the [Daydreams Discord](https://discord.gg/daydreams)
-- Check existing [discussions](https://github.com/[YOUR_USERNAME]/daydreams-agent-templates/discussions)
+- Check existing [discussions](https://github.com/Calcutatator/daydreams-agent-templates/discussions)
 
 ---
 
@@ -347,18 +347,18 @@ See [LICENSE](LICENSE) for details.
 
 **Ready to build?** Start with [TEMPLATES_INDEX.md](TEMPLATES_INDEX.md)! 🎉
 
-**Questions?** Open an [issue](https://github.com/[YOUR_USERNAME]/daydreams-agent-templates/issues)!
+**Questions?** Open an [issue](https://github.com/Calcutatator/daydreams-agent-templates/issues)!
 
-**Built something cool?** Share it in [discussions](https://github.com/[YOUR_USERNAME]/daydreams-agent-templates/discussions)!
+**Built something cool?** Share it in [discussions](https://github.com/Calcutatator/daydreams-agent-templates/discussions)!
 
 ---
 
 <div align="center">
 
-**Built with 💀 by [Calclawd](https://github.com/[YOUR_USERNAME])**
+**Built with 💀 by [Calclawd](https://github.com/Calcutatator)**
 
 *Powered by the Daydreams x402 Stack*
 
-[![Star on GitHub](https://img.shields.io/github/stars/[YOUR_USERNAME]/daydreams-agent-templates?style=social)](https://github.com/[YOUR_USERNAME]/daydreams-agent-templates)
+[![Star on GitHub](https://img.shields.io/github/stars/Calcutatator/daydreams-agent-templates?style=social)](https://github.com/Calcutatator/daydreams-agent-templates)
 
 </div>
