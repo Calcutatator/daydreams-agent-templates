@@ -82,10 +82,68 @@
         "Use cases: lotteries, gaming, sampling, security"
       ]
     }
+    },
+    {
+      "id": "nft-mint-agent",
+      "name": "Random Number NFT Minter",
+      "type": "x402-service-nft",
+      "status": "pending-deployment",
+      "path": "/root/nft-mint-agent",
+      "port": 8092,
+      "wallet": "TBD",
+      "contract": "TBD",
+      "networks": ["base"],
+      "pricing": {
+        "amount": "200000",
+        "currency": "USDC",
+        "decimals": 6
+      },
+      "costBreakdown": {
+        "oracle": "50000",
+        "gas": "~4000",
+        "profit": "~146000"
+      },
+      "endpoints": {
+        "root": "http://localhost:8092/",
+        "mint": "http://localhost:8092/mint",
+        "preview": "http://localhost:8092/preview",
+        "supported": "http://localhost:8092/x402/supported",
+        "health": "http://localhost:8092/health"
+      },
+      "nftDetails": {
+        "standard": "ERC721",
+        "metadata": "On-chain (Base64)",
+        "image": "On-chain SVG",
+        "attributes": ["Number", "Color"],
+        "storage": "Fully on-chain (no IPFS)"
+      },
+      "dependencies": [
+        "@daydreamsai/facilitator",
+        "elysia",
+        "viem",
+        "dotenv"
+      ],
+      "created": "2026-01-29",
+      "lastUpdated": "2026-01-29",
+      "notes": [
+        "Requires random-oracle-agent running",
+        "Contract deployment needed (see DEPLOY.md)",
+        "Test on Base Sepolia first",
+        "Wallet must be contract owner",
+        "~73% profit margin per mint"
+      ],
+      "nextSteps": [
+        "Deploy NumberNFT contract to Base",
+        "Add contract address to .env",
+        "Fund wallet with ETH for gas",
+        "Test minting flow",
+        "Launch on mainnet"
+      ]
+    }
   ],
   "metadata": {
-    "totalAgents": 2,
-    "lastUpdated": "2026-01-29T12:35:00Z",
+    "totalAgents": 3,
+    "lastUpdated": "2026-01-29T13:00:00Z",
     "version": "1.0.0"
   }
 }

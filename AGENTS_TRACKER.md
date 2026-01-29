@@ -52,6 +52,51 @@
   - Use cases: lotteries, gaming, sampling, security tokens
   - No external API keys needed (drand/NIST are public)
 
+### 3. **nft-mint-agent** 🎨
+- **Location:** `/root/nft-mint-agent/`
+- **Type:** x402 payment-gated service + NFT minter
+- **Status:** ⚠️ Pending contract deployment
+- **Function:** Mints incrementing number NFTs with random colors
+- **Price:** 0.20 USDC per mint
+- **Networks:** Base mainnet
+- **Wallet:** TBD (same as deployer)
+- **NFT Contract:** TBD (needs deployment - see DEPLOY.md)
+- **Flow:**
+  1. User pays 0.20 USDC
+  2. Calls random-oracle-agent (0.05 USDC)
+  3. Converts randomness to color
+  4. Mints ERC721 NFT with number + color
+  5. Transfers NFT to payer
+- **Cost Breakdown:**
+  - Oracle: 0.05 USDC
+  - Gas: ~0.004 USDC
+  - Profit: ~0.146 USDC (~73%)
+- **Endpoints:**
+  - `POST /mint` - Mint NFT (payment required)
+  - `GET /preview` - Preview next token ID
+  - `GET /` - Agent info
+- **Dependencies:**
+  - `@daydreamsai/facilitator`
+  - `elysia`
+  - `viem`
+  - `dotenv`
+- **Smart Contract:**
+  - ERC721 (OpenZeppelin)
+  - On-chain SVG generation
+  - Base64 metadata (no IPFS)
+  - Fully on-chain
+- **Last Updated:** 2026-01-29
+- **Next Steps:**
+  1. Deploy NumberNFT contract to Base (see DEPLOY.md)
+  2. Add contract address to .env
+  3. Test on Base Sepolia first
+  4. Launch on Base mainnet
+- **Notes:**
+  - Requires oracle agent running on port 8091
+  - Wallet must own NFT contract
+  - Needs ETH for gas (~$0.01 per mint)
+  - On-chain art: no external dependencies
+
 ---
 
 ## Planned Agents

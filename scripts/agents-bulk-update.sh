@@ -7,6 +7,7 @@ set -e
 AGENTS=(
   "/root/leet-agent"
   "/root/random-oracle-agent"
+  "/root/nft-mint-agent"
   # Add more agent paths as they're created
 )
 
