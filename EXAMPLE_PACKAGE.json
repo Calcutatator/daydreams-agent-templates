@@ -1,0 +1,33 @@
+{
+  "name": "[your-agent-name]",
+  "version": "1.0.0",
+  "description": "[Your agent description]",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "start": "NODE_ENV=production bun run src/index.ts",
+    "test": "bun test",
+    "generate-metadata": "GENERATE_METADATA=1 bun run src/index.ts"
+  },
+  "dependencies": {
+    "@daydreamsai/facilitator": "latest",
+    "@elysiajs/cors": "latest",
+    "elysia": "latest",
+    "viem": "^2.45.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "keywords": [
+    "x402",
+    "daydreams",
+    "agent",
+    "blockchain",
+    "payment",
+    "base",
+    "usdc"
+  ],
+  "author": "[Your name]",
+  "license": "MIT"
+}
