@@ -1,34 +1,45 @@
-🤖 One-Shot x402 Agent Prompt (Fill & Send)
+🤖 Create YOUR x402 Agent (Fill & Send Template)
 
-📝 FILL FIRST:
-NAME=[Your Agent Name]
-FUNCTION=[What it does]
-PRICE=[X.XX] USDC
-PORT=[8090]
-KEY=0x[your key]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+📝 DEFINE YOUR AGENT FIRST:
 
-💬 SEND THIS:
+NAME="" # Your agent's name
+FUNCTION="" # What it does
+PRICE="" # X.XX USDC
+PORT="" # 8090, 8091, etc
+KEY=0x... # Your wallet key
 
-"Create x402 agent:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 THEN SEND THIS TO YOUR AI:
+
+"Create my x402 agent:
+
 Name: ${NAME}
-Function: ${FUNCTION}  
-Price: ${PRICE} USDC
+Function: ${FUNCTION}
+Price: ${PRICE} USDC/request
 Port: ${PORT}
 
-Stack: Elysia + @daydreamsai/facilitator on Base mainnet
-Endpoints: /, /x402/*, /${FUNCTION}
-Payment: Exact USDC via x402 header
-Registry: ERC-8004 on Ethereum
+Stack: Elysia + @daydreamsai/facilitator
+Network: Base mainnet
+Token: USDC (0x833589...)
+Protocol: x402 v2
 
-ENV: EVM_PRIVATE_KEY=${KEY}, PORT=${PORT}
-USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+ENV:
+EVM_PRIVATE_KEY=${KEY}
+PORT=${PORT}
 
-Output: Full code + package.json + README + deploy instructions"
+Build complete agent with:
+- All x402 endpoints (/, /health, /x402/*)
+- Main endpoint: /${FUNCTION}
+- Payment verification
+- Full documentation
+- Deployment guide
 
----
+Make it work for: ${FUNCTION}"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📚 Full template: github.com/Calcutatator/daydreams-agent-templates
-💬 xGate: xgate.run
-🔗 Docs: daydreamsai.com
+🔗 xGate: xgate.run

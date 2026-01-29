@@ -1,142 +1,239 @@
 # ⚡ Quick Agent Creation Prompt
 
-**Copy this entire prompt, fill in the variables below, and send to your AI agent in one message.**
+**Use this template to create YOUR x402-enabled agent**
 
 ---
 
-## 📝 FILL THESE FIRST (Required)
+## 📝 DEFINE YOUR AGENT (Fill in your details below)
 
-```
-AGENT_NAME="Weather Oracle"
-AGENT_DESCRIPTION="Real-time weather forecasts and current conditions for any location worldwide"
-ENDPOINT_NAME="weather"
-PRICE_USDC="0.05"
-PORT="8093"
-EVM_PRIVATE_KEY="0x..."
-MCP_URL="https://mcp.xgate.run/user/wallet%3A1%3A0x.../mcp?token=..."
-```
+```bash
+# What agent do you want to create? Fill these in:
 
-**Optional:**
-```
-AGENT_IMAGE_URL="https://example.com/weather-icon.png"
-SKILLS='["data/weather", "api/forecast"]'
-DOMAINS='["weather", "climate"]'
+AGENT_NAME=""
+# Example: "Weather Oracle", "Crypto Price Bot", "Image Analyzer"
+
+AGENT_DESCRIPTION=""
+# Example: "Provides real-time weather forecasts for any location"
+# Be specific about what your agent does
+
+ENDPOINT_NAME=""
+# Example: "weather", "price", "analyze" 
+# This becomes POST /your-endpoint
+
+PRICE_USDC=""
+# Example: "0.05" (5 cents), "0.10" (10 cents)
+# How much to charge per request
+
+PORT=""
+# Example: "8090", "8091", "8092"
+# Port your agent will run on
+
+EVM_PRIVATE_KEY=""
+# Your Ethereum wallet private key (0x...)
+# Keep this SECRET! Agent uses this to receive payments
+
+MCP_URL=""
+# Your xGate MCP URL with token
+# Get this from https://xgate.run/
+
+# Optional (improves discoverability):
+AGENT_IMAGE_URL=""
+# Example: "https://example.com/my-agent-icon.png"
+
+AGENT_SKILLS=""
+# Example: "data/weather, api/forecast"
+# What skills/capabilities does your agent have?
+
+AGENT_DOMAINS=""
+# Example: "weather, climate"
+# What domains/categories does it cover?
 ```
 
 ---
 
-## 🤖 SEND THIS TO YOUR AI AGENT
+## 🤖 ONCE FILLED, SEND THIS ENTIRE PROMPT TO YOUR AI:
 
 ```
-Create a complete x402-enabled agent on the Daydreams stack:
+Create a complete x402-enabled agent on the Daydreams stack using this configuration:
 
-AGENT DETAILS:
+========================================
+MY AGENT CONFIGURATION
+========================================
+
+Agent Identity:
 - Name: ${AGENT_NAME}
 - Description: ${AGENT_DESCRIPTION}
 - Endpoint: /${ENDPOINT_NAME}
 - Price: ${PRICE_USDC} USDC per request
 - Port: ${PORT}
 
-TECH STACK:
-- Framework: Elysia + Bun
-- Payment: @daydreamsai/facilitator (Base mainnet)
-- Price verification: exact ${PRICE_USDC * 1000000} micro-USDC
-- USDC token: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
-- Chain: Base mainnet (8453)
+Optional Metadata:
+- Image: ${AGENT_IMAGE_URL}
+- Skills: ${AGENT_SKILLS}
+- Domains: ${AGENT_DOMAINS}
 
-REQUIRED ENDPOINTS:
-1. GET / - Agent info
+Deployment:
+- xGate MCP: ${MCP_URL}
+- Private Key: ${EVM_PRIVATE_KEY}
+
+========================================
+BUILD REQUIREMENTS
+========================================
+
+Use the Daydreams x402 stack:
+
+Tech Stack:
+- Framework: Elysia + Bun
+- Payment: @daydreamsai/facilitator
+- Blockchain: Base mainnet (chain ID 8453)
+- Token: USDC (0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)
+- Protocol: x402 v2
+
+Required Endpoints:
+1. GET / - Agent info and pricing
 2. GET /health - Health check
 3. GET /x402/supported - Payment capabilities
-4. POST /x402/verify - Verify payments
+4. POST /x402/verify - Verify payment payloads
 5. POST /x402/settle - Settle payments
-6. POST /${ENDPOINT_NAME} - Main paid endpoint (requires x402 header)
+6. POST /${ENDPOINT_NAME} - Main service (payment required)
 
-ENVIRONMENT:
+Payment Configuration:
+- Price: ${PRICE_USDC} USDC (${PRICE_USDC * 1000000} micro-USDC)
+- Verification: Use facilitator.verify() with exact price matching
+- Payment header: Parse "x402" header from requests
+- Network: "base"
+- Scheme: "exact"
+
+Environment Variables:
 EVM_PRIVATE_KEY=${EVM_PRIVATE_KEY}
 PORT=${PORT}
 EVM_RPC_URL=https://mainnet.base.org
 
-IMPLEMENTATION:
-1. Create new project directory: ${AGENT_NAME}-agent
-2. Install: elysia, @elysiajs/cors, @daydreamsai/facilitator, viem, dotenv
-3. Implement payment-protected endpoint:
-   - Parse x402 header (JSON payment payload)
-   - Verify with facilitator against exact price
-   - Execute service logic only if payment valid
-   - Return result
-4. Enable CORS for public access
-5. Test locally, then deploy with public IP
-6. Register on xGate MCP: ${MCP_URL}
+========================================
+IMPLEMENTATION INSTRUCTIONS
+========================================
 
-DELIVERABLES:
-- Complete src/index.ts with all endpoints
-- package.json with dependencies
-- .env.example template
-- README.md with setup instructions
-- Test script for payment verification
-- ERC-8004 metadata JSON
+1. Create Project Structure:
+   - Directory: ${AGENT_NAME}-agent/
+   - src/index.ts (main code)
+   - package.json (dependencies)
+   - .env.example (environment template)
+   - README.md (documentation)
+   - .gitignore
 
-Make it production-ready, well-commented, and include instructions for deployment.
+2. Install Dependencies:
+   - elysia
+   - @elysiajs/cors
+   - @daydreamsai/facilitator
+   - viem
+   - dotenv
+
+3. Implement Service Logic:
+   Create a function that implements the core functionality described in "${AGENT_DESCRIPTION}".
+   This should be the main logic that executes after payment verification.
+
+4. Payment Protection:
+   The /${ENDPOINT_NAME} endpoint MUST:
+   - Check for x402 header
+   - Parse payment payload
+   - Verify with facilitator
+   - Only execute service if payment is valid
+   - Return helpful errors if payment missing/invalid
+
+5. Enable CORS:
+   Allow public access for xGate and browser clients
+
+6. Error Handling:
+   - Graceful error messages
+   - Log errors for debugging
+   - Don't leak sensitive info
+
+========================================
+DELIVERABLES
+========================================
+
+Generate these files:
+
+1. src/index.ts - Complete working agent code
+2. package.json - All dependencies and scripts
+3. .env.example - Environment variable template
+4. README.md - Setup, deployment, and usage instructions
+5. .gitignore - Protect sensitive files
+6. test-agent.ts - Test script for local verification
+
+Requirements:
+- Production-ready code
+- Well-commented
+- TypeScript types
+- Security best practices
+- Complete documentation
+
+Make the code specific to my agent's purpose: ${AGENT_DESCRIPTION}
 ```
 
 ---
 
-## 📋 Checklist Before Sending
+## ✅ Before Sending, Verify You Filled:
 
-- [ ] Filled in AGENT_NAME
-- [ ] Filled in AGENT_DESCRIPTION
-- [ ] Filled in ENDPOINT_NAME
-- [ ] Filled in PRICE_USDC (e.g., "0.05" for 5 cents)
-- [ ] Filled in PORT (e.g., "8090")
-- [ ] Filled in EVM_PRIVATE_KEY (your wallet private key)
-- [ ] Filled in MCP_URL (your xGate MCP URL)
-- [ ] Optional: Filled in AGENT_IMAGE_URL
-- [ ] Optional: Filled in SKILLS
-- [ ] Optional: Filled in DOMAINS
+- [ ] AGENT_NAME - What's your agent called?
+- [ ] AGENT_DESCRIPTION - What does it do?
+- [ ] ENDPOINT_NAME - What's the main API endpoint?
+- [ ] PRICE_USDC - How much per request?
+- [ ] PORT - Which port to run on?
+- [ ] EVM_PRIVATE_KEY - Your wallet key (keep secret!)
+- [ ] MCP_URL - Your xGate MCP URL
+
+Optional but recommended:
+- [ ] AGENT_IMAGE_URL - Icon/avatar for your agent
+- [ ] AGENT_SKILLS - Comma-separated capabilities
+- [ ] AGENT_DOMAINS - Comma-separated categories
 
 ---
 
-## 🎯 What You'll Get
+## 💡 Example Configuration
 
-Your AI will create:
-1. Complete TypeScript agent code
-2. package.json with all dependencies
-3. .env.example template
-4. README.md with setup and deployment instructions
-5. Test scripts for local testing
-6. ERC-8004 metadata for on-chain registration (optional)
+```bash
+AGENT_NAME="Weather Oracle"
+AGENT_DESCRIPTION="Provides real-time weather forecasts and current conditions for any location worldwide using OpenWeatherMap API"
+ENDPOINT_NAME="weather"
+PRICE_USDC="0.05"
+PORT="8093"
+EVM_PRIVATE_KEY="0xabc123..." # (never share publicly!)
+MCP_URL="https://mcp.xgate.run/user/wallet%3A1%3A0xa.../mcp?token=xyz..."
+AGENT_IMAGE_URL="https://example.com/weather-icon.png"
+AGENT_SKILLS="data/weather, api/forecast, location/geocoding"
+AGENT_DOMAINS="weather, climate, forecasting"
+```
+
+---
+
+## 🎯 What Happens Next
+
+Your AI will:
+1. Read your agent configuration
+2. Generate complete TypeScript code specific to YOUR agent
+3. Create all necessary files (package.json, README, etc.)
+4. Include setup and deployment instructions
+5. Implement the service logic described in AGENT_DESCRIPTION
 
 **Time to working agent:** 5-10 minutes
 
 ---
 
-## 🔒 Security Note
+## 🔒 Security Reminder
 
-**Never share your EVM_PRIVATE_KEY publicly!** This prompt is for your AI assistant only.
+**Never commit EVM_PRIVATE_KEY to git or share it publicly!**
 
----
-
-## 💡 Example Values
-
-```
-AGENT_NAME="Weather Oracle"
-AGENT_DESCRIPTION="Real-time weather forecasts powered by OpenWeatherMap API"
-ENDPOINT_NAME="weather"
-PRICE_USDC="0.05"
-PORT="8093"
-EVM_PRIVATE_KEY="0xabc123..." (never share!)
-MCP_URL="https://mcp.xgate.run/user/wallet%3A1%3A0xa.../mcp?token=xyz..."
-AGENT_IMAGE_URL="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sun%20behind%20cloud/3D/sun_behind_cloud_3d.png"
-SKILLS='["data/weather", "api/forecast", "location/geocoding"]'
-DOMAINS='["weather", "climate", "forecasting"]'
-```
+The generated code will use environment variables to keep it secure.
 
 ---
 
-## 📚 Resources
+## 📚 Need More Help?
 
-- **Daydreams:** https://github.com/daydreamsai
-- **xGate:** https://xgate.run/
-- **Base:** https://base.org/
 - **Full Template:** See AGENT_CREATION_TEMPLATE.md for detailed version
+- **Architecture:** See AGENT_ARCHITECTURE.md for system design
+- **Examples:** See EXAMPLE_AGENT.ts for working code
+
+---
+
+*Template for creating any x402-enabled agent on the Daydreams stack*

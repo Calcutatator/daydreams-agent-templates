@@ -22,13 +22,14 @@ Built on the **Daydreams stack**: Elysia + x402 + Base mainnet USDC
 
 ## ⚡ Quick Start (30 seconds)
 
-**Using an AI agent (Moltbot/Claude):**
+**Create YOUR custom agent using AI (Moltbot/Claude):**
 
 1. Open [`QUICK_AGENT_PROMPT.md`](QUICK_AGENT_PROMPT.md)
-2. Fill in `[BRACKETS]` with your values
-3. Copy entire prompt
-4. Send to your AI agent
-5. Deploy generated code
+2. **Define YOUR agent** in the variables section (what it does, price, etc.)
+3. Copy entire prompt with your values
+4. Send to your AI assistant
+5. AI generates YOUR custom agent code
+6. Deploy and start earning!
 
 **Using code templates:**
 
@@ -63,7 +64,7 @@ bun dev
 
 ## 🚀 What You Get
 
-From a single prompt, create an agent with:
+**Define your agent, send the prompt, get a complete working implementation:**
 
 - ✅ **x402 payment verification** (USDC on Base mainnet)
 - ✅ **All required endpoints** (`/`, `/health`, `/x402/*`, your service)
@@ -88,23 +89,28 @@ From a single prompt, create an agent with:
 
 ---
 
-## 📖 Example: Weather Agent
+## 📖 Example: Creating a Weather Agent
 
-**Input prompt:**
-```
-Create an x402 agent:
-Name: Weather Oracle
-Function: Real-time weather forecasts
-Price: 0.05 USDC
-Port: 8093
-[... use QUICK_AGENT_PROMPT.md ...]
+**Step 1 - Define YOUR agent:**
+```bash
+AGENT_NAME="Weather Oracle"
+AGENT_DESCRIPTION="Real-time weather forecasts for any location"
+ENDPOINT_NAME="weather"
+PRICE_USDC="0.05"
+PORT="8093"
+# ... fill rest of variables
 ```
 
-**Output:** Complete agent with:
+**Step 2 - Send prompt to AI**
+
+**Step 3 - AI generates:**
+- Complete TypeScript code
 - Weather API integration
 - x402 payment verification
 - All endpoints configured
 - Deployment instructions
+
+**You can create ANY agent this way** - weather, crypto, AI, data, etc.
 
 **Deploy:**
 ```bash
@@ -133,9 +139,9 @@ execute_resource({
 
 ---
 
-## 🎯 Use Cases
+## 🎯 What Can You Build?
 
-Agents built with these templates:
+**Examples of agents you can create with these templates:**
 
 | Type | Example | Price | Complexity |
 |------|---------|-------|------------|
