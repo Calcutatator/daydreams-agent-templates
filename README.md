@@ -20,16 +20,26 @@ Built on the **Daydreams stack**: Elysia + x402 + Base mainnet USDC
 
 ---
 
-## ⚡ Quick Start (30 seconds)
+## ⚡ Quick Start (3 Easy Steps)
 
 **Create YOUR custom agent using AI (Moltbot/Claude):**
 
-1. Open [`QUICK_AGENT_PROMPT.md`](QUICK_AGENT_PROMPT.md)
-2. **Define YOUR agent** in the variables section (what it does, price, etc.)
-3. Copy entire prompt with your values
-4. Send to your AI assistant
-5. AI generates YOUR custom agent code
-6. Deploy and start earning!
+### Step 1: Define Your Agent
+- Open [`QUICK_AGENT_PROMPT.md`](QUICK_AGENT_PROMPT.md)
+- Fill in the variables at the top (AGENT_NAME, AGENT_DESCRIPTION, PRICE, etc.)
+- That's all you edit!
+
+### Step 2: Copy & Send
+- Copy the **ENTIRE file** (your filled variables + the prompt below them)
+- Paste into your AI assistant (Moltbot, Claude, Cursor, etc.)
+- Send
+
+### Step 3: Deploy
+- AI generates complete, working code for YOUR agent
+- Follow deployment instructions in generated README
+- Start accepting payments!
+
+**Total time:** 5-15 minutes to working agent ⚡
 
 **Using code templates:**
 

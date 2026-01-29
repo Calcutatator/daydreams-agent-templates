@@ -51,7 +51,17 @@ AGENT_DOMAINS=""
 
 ---
 
-## 🤖 ONCE FILLED, SEND THIS ENTIRE PROMPT TO YOUR AI:
+## 📋 HOW TO USE
+
+1. **Fill the variables above** (AGENT_NAME, AGENT_DESCRIPTION, etc.)
+2. **Copy this ENTIRE file** (your variables + the prompt below)
+3. **Send everything to your AI** (Moltbot, Claude, etc.)
+
+**That's it!** Your AI will see your values above and use them in the prompt below. You don't need to edit anything in the prompt section.
+
+---
+
+## 🤖 THE PROMPT (Copy with your variables and send to AI)
 
 ```
 Create a complete x402-enabled agent on the Daydreams stack using this configuration:

@@ -2,7 +2,7 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📝 DEFINE YOUR AGENT FIRST:
+📝 STEP 1 - FILL YOUR AGENT INFO:
 
 NAME="" # Your agent's name
 FUNCTION="" # What it does
@@ -12,7 +12,14 @@ KEY=0x... # Your wallet key
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💬 THEN SEND THIS TO YOUR AI:
+📋 HOW TO USE:
+1. Fill step 1 above
+2. Copy this ENTIRE file
+3. Send to your AI
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 STEP 2 - THE PROMPT (AI reads your values):
 
 "Create my x402 agent:
 

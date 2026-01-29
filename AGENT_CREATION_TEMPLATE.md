@@ -81,9 +81,26 @@ AGENT_DOMAINS=""
 
 ---
 
-## 🚀 STEP 2: Send This Complete Prompt to Your AI
+## 📋 HOW TO USE THIS TEMPLATE
 
-**Copy everything below (with your filled variables above) and send to your AI assistant:**
+**Simple 3-step process:**
+
+1. ✅ **Fill STEP 1 above** - Replace empty `""` with your agent details
+2. ✅ **Copy this ENTIRE file** - Both STEP 1 (with your values) AND STEP 2 (below)
+3. ✅ **Send everything to your AI** - It will read your STEP 1 values and build your agent
+
+**You do NOT need to edit STEP 2!** Your AI will automatically use your STEP 1 values when it sees `${VARIABLE}` syntax below.
+
+**Example:**
+- You fill: `AGENT_NAME="Weather Oracle"` in STEP 1
+- STEP 2 says: `Name: ${AGENT_NAME}`
+- AI reads both and creates an agent named "Weather Oracle"
+
+---
+
+## 🚀 STEP 2: The Prompt (Copy with STEP 1 and send to AI)
+
+**Your AI will use your STEP 1 values when building the agent described below:**
 
 ```
 I want to create a custom x402-enabled agent. Build it using the configuration I've provided.
