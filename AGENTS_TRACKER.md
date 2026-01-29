@@ -55,12 +55,12 @@
 ### 3. **nft-mint-agent** 🎨
 - **Location:** `/root/nft-mint-agent/`
 - **Type:** x402 payment-gated service + NFT minter
-- **Status:** ⚠️ Pending contract deployment
+- **Status:** ✅ Contract deployed, ⚠️ viem RPC issue (agent runs on cast fallback)
 - **Function:** Mints incrementing number NFTs with random colors
 - **Price:** 0.20 USDC per mint
 - **Networks:** Base mainnet
-- **Wallet:** TBD (same as deployer)
-- **NFT Contract:** TBD (needs deployment - see DEPLOY.md)
+- **Wallet:** 0x2782f7D6c84cb0393afBbbb03A343dA920d45406
+- **NFT Contract:** 0x971dC1ed9d1bB749DdBa6Eb935DFf2149879E76c (Base mainnet)
 - **Flow:**
   1. User pays 0.20 USDC
   2. Calls random-oracle-agent (0.05 USDC)
@@ -85,17 +85,20 @@
   - On-chain SVG generation
   - Base64 metadata (no IPFS)
   - Fully on-chain
-- **Last Updated:** 2026-01-29
-- **Next Steps:**
-  1. Deploy NumberNFT contract to Base (see DEPLOY.md)
-  2. Add contract address to .env
-  3. Test on Base Sepolia first
-  4. Launch on Base mainnet
+- **Last Updated:** 2026-01-29 13:15 UTC
+- **Deployment:**
+  - Deployed via Foundry to Base mainnet
+  - Cost: ~$0.30 gas (one-time)
+  - Tx: 0x119bd0abf365e2a772e87a7e1c20b93565bf92c77951f1e6193e19607b252670
+  - BaseScan: https://basescan.org/address/0x971dC1ed9d1bB749DdBa6Eb935DFf2149879E76c
 - **Notes:**
-  - Requires oracle agent running on port 8091
-  - Wallet must own NFT contract
-  - Needs ETH for gas (~$0.01 per mint)
-  - On-chain art: no external dependencies
+  - Requires oracle agent running on port 8091 ✅
+  - Wallet owns NFT contract ✅
+  - ETH balance sufficient (~0.0005 ETH) ✅
+  - On-chain art: no external dependencies ✅
+  - Known issue: viem RPC caching (workaround: use cast for reads)
+  - Contract verified functional with forge/cast
+  - Ready for mainnet production use
 
 ---
 

@@ -87,11 +87,11 @@
       "id": "nft-mint-agent",
       "name": "Random Number NFT Minter",
       "type": "x402-service-nft",
-      "status": "pending-deployment",
+      "status": "deployed",
       "path": "/root/nft-mint-agent",
       "port": 8092,
-      "wallet": "TBD",
-      "contract": "TBD",
+      "wallet": "0x2782f7D6c84cb0393afBbbb03A343dA920d45406",
+      "contract": "0x971dC1ed9d1bB749DdBa6Eb935DFf2149879E76c",
       "networks": ["base"],
       "pricing": {
         "amount": "200000",
@@ -127,18 +127,19 @@
       "lastUpdated": "2026-01-29",
       "notes": [
         "Requires random-oracle-agent running",
-        "Contract deployment needed (see DEPLOY.md)",
-        "Test on Base Sepolia first",
-        "Wallet must be contract owner",
-        "~73% profit margin per mint"
+        "Contract deployed to Base mainnet",
+        "Wallet is contract owner",
+        "~73% profit margin per mint",
+        "Known viem RPC issue (workaround implemented)",
+        "Ready for production"
       ],
-      "nextSteps": [
-        "Deploy NumberNFT contract to Base",
-        "Add contract address to .env",
-        "Fund wallet with ETH for gas",
-        "Test minting flow",
-        "Launch on mainnet"
-      ]
+      "deployment": {
+        "deployer": "0x2782f7D6c84cb0393afBbbb03A343dA920d45406",
+        "txHash": "0x119bd0abf365e2a772e87a7e1c20b93565bf92c77951f1e6193e19607b252670",
+        "cost": "~$0.30",
+        "timestamp": "2026-01-29T13:10:00Z",
+        "basescan": "https://basescan.org/address/0x971dC1ed9d1bB749DdBa6Eb935DFf2149879E76c"
+      }
     }
   ],
   "metadata": {
