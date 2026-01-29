@@ -28,3 +28,5 @@ LIVE_AGENTS.md
 node_modules/
 .DS_Store
 bun.lock
+canvas/
+scripts/
