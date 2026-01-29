@@ -1,27 +1,34 @@
-🤖 One-Shot Agent Prompt for Daydreams x402
+🤖 One-Shot x402 Agent Prompt (Fill & Send)
 
-Copy & paste to your AI (fill in [BRACKETS]):
+📝 FILL FIRST:
+NAME=[Your Agent Name]
+FUNCTION=[What it does]
+PRICE=[X.XX] USDC
+PORT=[8090]
+KEY=0x[your key]
 
 ---
 
-"Create an x402 agent:
-Name: [NAME]
-Function: [WHAT_IT_DOES]
-Price: [AMOUNT] USDC
-Port: [PORT]
+💬 SEND THIS:
+
+"Create x402 agent:
+Name: ${NAME}
+Function: ${FUNCTION}  
+Price: ${PRICE} USDC
+Port: ${PORT}
 
 Stack: Elysia + @daydreamsai/facilitator on Base mainnet
-Endpoints: /, /x402/*, /[YOUR_ENDPOINT]
+Endpoints: /, /x402/*, /${FUNCTION}
 Payment: Exact USDC via x402 header
-Registry: ERC-8004 on Ethereum mainnet
+Registry: ERC-8004 on Ethereum
 
-ENV: EVM_PRIVATE_KEY, PORT, EVM_RPC_URL
+ENV: EVM_PRIVATE_KEY=${KEY}, PORT=${PORT}
 USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
 
 Output: Full code + package.json + README + deploy instructions"
 
 ---
 
-📚 Full template: github.com/[YOUR_REPO]/agent-template
-💬 Docs: daydreamsai.com
-🔗 xGate: xgate.run
+📚 Full template: github.com/Calcutatator/daydreams-agent-templates
+💬 xGate: xgate.run
+🔗 Docs: daydreamsai.com
