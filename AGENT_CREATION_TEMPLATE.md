@@ -57,7 +57,26 @@ MCP_URL=""
 # Your xGate MCP URL (get from https://xgate.run/)
 # Example: "https://mcp.xgate.run/user/wallet%3A1%3A0x.../mcp?token=..."
 
+# ============================================
+# OPTIONAL (Improves Discoverability)
+# ============================================
 
+AGENT_IMAGE_URL=""
+# URL to an image/icon for your agent
+# Example: "https://example.com/my-agent-icon.png"
+# Can use services like imgur, github raw, or your own server
+
+AGENT_SKILLS=""
+# Comma-separated list of skills/capabilities
+# Example: "data/weather, api/forecast, location/geocoding"
+# Example: "ai/vision, image/analysis, object/detection"
+# Format: category/skill
+
+AGENT_DOMAINS=""
+# Comma-separated list of domains/categories
+# Example: "weather, climate, forecasting"
+# Example: "crypto, finance, trading"
+# Helps users find your agent
 ```
 
 ---
