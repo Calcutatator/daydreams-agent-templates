@@ -14,6 +14,7 @@
 - **Price:** 0.10 USDC per query
 - **Networks:** Base mainnet, Base Sepolia
 - **Wallet:** 0xa62D214750455C043C25DEA89FECc8724f61e45b
+- **Facilitator:** https://facilitator.daydreams.systems
 - **Dependencies:** 
   - `@daydreamsai/facilitator`
   - `elysia`
@@ -33,6 +34,7 @@
 - **Price:** 0.05 USDC per query
 - **Networks:** Base mainnet
 - **Wallet:** 0x2782f7D6c84cb0393afBbbb03A343dA920d45406
+- **Facilitator:** https://facilitator.daydreams.systems
 - **Sources:**
   - **drand** (League of Entropy) - 20+ independent orgs, every 30s
   - **NIST** Randomness Beacon - US Government, every 60s
@@ -60,6 +62,7 @@
 - **Price:** 0.20 USDC per mint
 - **Networks:** Base mainnet
 - **Wallet:** 0x2782f7D6c84cb0393afBbbb03A343dA920d45406
+- **Facilitator:** https://facilitator.daydreams.systems
 - **NFT Contract:** 0x971dC1ed9d1bB749DdBa6Eb935DFf2149879E76c (Base mainnet)
 - **Flow:**
   1. User pays 0.20 USDC
