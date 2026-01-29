@@ -248,16 +248,15 @@ Before sending, verify you've filled in:
 
 ## 💡 Example Configuration
 
-```bash
-AGENT_NAME="Weather Oracle"
-AGENT_DESCRIPTION="Provides real-time weather forecasts and current conditions for any location worldwide using OpenWeatherMap API"
-ENDPOINT_NAME="weather"
-PRICE_USDC="0.05"
-EVM_PRIVATE_KEY="0xabc123..." # (never share!)
-AGENT_IMAGE_URL="https://example.com/weather-icon.png"
-AGENT_SKILLS="data/weather, api/forecast, location/geocoding"
-AGENT_DOMAINS="weather, climate, forecasting"
-```
+**Weather Agent:**
+- AGENT_NAME: "Weather Oracle"
+- AGENT_DESCRIPTION: "Provides real-time weather forecasts and current conditions for any location worldwide using OpenWeatherMap API"
+- ENDPOINT_NAME: "weather"
+- PRICE_USDC: "0.05"
+- EVM_PRIVATE_KEY: "0xabc123..." (never share!)
+- AGENT_IMAGE_URL: "https://example.com/weather-icon.png"
+- AGENT_SKILLS: "data/weather, api/forecast, location/geocoding"
+- AGENT_DOMAINS: "weather, climate, forecasting"
 
 ---
 
