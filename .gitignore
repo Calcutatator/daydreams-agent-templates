@@ -1,0 +1,30 @@
+# Sensitive files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*_private*
+credentials/
+.credentials/
+
+# Memory and logs
+memory/
+*.log
+
+# Personal workspace files
+AGENTS.md
+SOUL.md
+USER.md
+IDENTITY.md
+HEARTBEAT.md
+BRIEFING_SETUP.md
+TOOLS.md
+agents-db.json
+AGENTS_TRACKER.md
+LIVE_AGENTS.md
+
+# Node/Bun
+node_modules/
+.DS_Store
+bun.lock
