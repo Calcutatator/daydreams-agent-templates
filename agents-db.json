@@ -20,7 +20,8 @@
         "health": "http://localhost:8090/"
       },
       "dependencies": [
-        "@daydreams-systems/x402-server",
+        "@daydreamsai/facilitator",
+        "elysia",
         "dotenv"
       ],
       "created": "2026-01-29",
@@ -30,11 +31,61 @@
         "Needs integration with Venice AI or xGate MCP",
         "Requires USDC balance for upstream calls"
       ]
+    },
+    {
+      "id": "random-oracle-agent",
+      "name": "Random Oracle Agent",
+      "type": "x402-service",
+      "status": "running",
+      "path": "/root/random-oracle-agent",
+      "port": 8091,
+      "wallet": "0x2782f7D6c84cb0393afBbbb03A343dA920d45406",
+      "networks": ["base"],
+      "pricing": {
+        "amount": "50000",
+        "currency": "USDC",
+        "decimals": 6
+      },
+      "endpoints": {
+        "root": "http://localhost:8091/",
+        "supported": "http://localhost:8091/x402/supported",
+        "health": "http://localhost:8091/health",
+        "drand": "http://localhost:8091/random/drand",
+        "nist": "http://localhost:8091/random/nist",
+        "both": "http://localhost:8091/random/both"
+      },
+      "sources": {
+        "drand": {
+          "name": "League of Entropy",
+          "frequency": "30s",
+          "participants": 20,
+          "verifiable": true
+        },
+        "nist": {
+          "name": "NIST Randomness Beacon",
+          "frequency": "60s",
+          "authority": "US Government",
+          "verifiable": true
+        }
+      },
+      "dependencies": [
+        "@daydreamsai/facilitator",
+        "elysia",
+        "dotenv"
+      ],
+      "created": "2026-01-29",
+      "lastUpdated": "2026-01-29",
+      "notes": [
+        "Cryptographically secure randomness",
+        "Impossible to game: distributed threshold cryptography",
+        "No API keys needed (public sources)",
+        "Use cases: lotteries, gaming, sampling, security"
+      ]
     }
   ],
   "metadata": {
-    "totalAgents": 1,
-    "lastUpdated": "2026-01-29T12:24:00Z",
+    "totalAgents": 2,
+    "lastUpdated": "2026-01-29T12:35:00Z",
     "version": "1.0.0"
   }
 }

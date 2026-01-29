@@ -15,7 +15,8 @@
 - **Networks:** Base mainnet, Base Sepolia
 - **Wallet:** 0xa62D214750455C043C25DEA89FECc8724f61e45b
 - **Dependencies:** 
-  - `@daydreams-systems/x402-server`
+  - `@daydreamsai/facilitator`
+  - `elysia`
   - `dotenv`
   - Private key in `.env`
 - **Last Updated:** 2026-01-29
@@ -23,6 +24,33 @@
   - Currently just converts to leet speak
   - Next: Integrate Venice AI or xGate MCP for actual LLM responses
   - Needs USDC balance to call upstream services
+
+### 2. **random-oracle-agent** 🔮
+- **Location:** `/root/random-oracle-agent/`
+- **Type:** x402 payment-gated service
+- **Status:** ✅ Running (port 8091)
+- **Function:** Provides cryptographically secure, ungameable randomness
+- **Price:** 0.05 USDC per query
+- **Networks:** Base mainnet
+- **Wallet:** 0x2782f7D6c84cb0393afBbbb03A343dA920d45406
+- **Sources:**
+  - **drand** (League of Entropy) - 20+ independent orgs, every 30s
+  - **NIST** Randomness Beacon - US Government, every 60s
+  - **both** - XOR combination of drand + NIST
+- **Endpoints:**
+  - `GET /random/drand` - Primary source
+  - `GET /random/nist` - Backup source
+  - `GET /random/both` - Combined sources
+- **Dependencies:**
+  - `@daydreamsai/facilitator`
+  - `elysia`
+  - `dotenv`
+- **Last Updated:** 2026-01-29
+- **Notes:**
+  - Impossible to game: distributed threshold cryptography
+  - Publicly verifiable: full audit trail
+  - Use cases: lotteries, gaming, sampling, security tokens
+  - No external API keys needed (drand/NIST are public)
 
 ---
 
