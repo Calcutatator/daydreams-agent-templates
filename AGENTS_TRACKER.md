@@ -9,11 +9,12 @@
 ### 1. **leet-agent** 🔤
 - **Location:** `/root/leet-agent/`
 - **Type:** x402 payment-gated service
-- **Status:** ✅ Running (port 8090)
+- **Status:** ✅ Live (port 8090)
+- **Public URL:** `http://46.224.229.228:8090`
 - **Function:** Converts questions to leet speak answers
 - **Price:** 0.10 USDC per query
 - **Networks:** Base mainnet, Base Sepolia
-- **Wallet:** 0xa62D214750455C043C25DEA89FECc8724f61e45b
+- **Wallet:** 0x2782f7D6c84cb0393afBbbb03A343dA920d45406
 - **Facilitator:** https://facilitator.daydreams.systems
 - **Dependencies:** 
   - `@daydreamsai/facilitator`
@@ -29,7 +30,8 @@
 ### 2. **random-oracle-agent** 🔮
 - **Location:** `/root/random-oracle-agent/`
 - **Type:** x402 payment-gated service
-- **Status:** ✅ Running (port 8091)
+- **Status:** ✅ Live (port 8091)
+- **Public URL:** `http://46.224.229.228:8091`
 - **Function:** Provides cryptographically secure, ungameable randomness
 - **Price:** 0.05 USDC per query
 - **Networks:** Base mainnet
@@ -57,7 +59,8 @@
 ### 3. **nft-mint-agent** 🎨
 - **Location:** `/root/nft-mint-agent/`
 - **Type:** x402 payment-gated service + NFT minter
-- **Status:** ✅ Contract deployed, ⚠️ viem RPC issue (agent runs on cast fallback)
+- **Status:** ✅ Live (port 8092)
+- **Public URL:** `http://46.224.229.228:8092`
 - **Function:** Mints incrementing number NFTs with random colors
 - **Price:** 0.20 USDC per mint
 - **Networks:** Base mainnet
