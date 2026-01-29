@@ -39,6 +39,10 @@ EVM_PRIVATE_KEY=""
 # Your Ethereum wallet private key (0x...)
 # KEEP SECRET - this receives payments
 
+MCP_URL=""
+# Your xGate MCP URL (from https://xgate.run/)
+# Example: "https://mcp.xgate.run/user/wallet%3A1%3A0x.../mcp?token=..."
+
 # ============================================
 # DON'T EDIT BELOW THIS LINE
 # ============================================
@@ -57,6 +61,7 @@ Identity:
 
 Credentials:
 - Wallet Private Key: ${EVM_PRIVATE_KEY}
+- xGate MCP: ${MCP_URL}
 
 ========================================
 DEPLOYMENT SETTINGS (You choose these)
@@ -223,6 +228,7 @@ Before sending, verify you've filled in:
 - [ ] ENDPOINT_NAME - Main API endpoint name
 - [ ] PRICE_USDC - Price per request
 - [ ] EVM_PRIVATE_KEY - Your wallet key (keep secret!)
+- [ ] MCP_URL - Your xGate MCP URL (from https://xgate.run/)
 
 ---
 
@@ -234,6 +240,7 @@ Before sending, verify you've filled in:
 - ENDPOINT_NAME: "weather"
 - PRICE_USDC: "0.05"
 - EVM_PRIVATE_KEY: "0xabc123..." (never share!)
+- MCP_URL: "https://mcp.xgate.run/user/wallet%3A1%3A0x.../mcp?token=..."
 
 ---
 
