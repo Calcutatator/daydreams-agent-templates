@@ -39,11 +39,6 @@ EVM_PRIVATE_KEY=""
 # Your Ethereum wallet private key (0x...)
 # KEEP SECRET - this receives payments
 
-# OPTIONAL (improves discoverability):
-AGENT_IMAGE_URL=""
-AGENT_SKILLS=""
-AGENT_DOMAINS=""
-
 # ============================================
 # DON'T EDIT BELOW THIS LINE
 # ============================================
@@ -59,11 +54,6 @@ Identity:
 - Description: ${AGENT_DESCRIPTION}
 - Main Endpoint: /${ENDPOINT_NAME}
 - Price: ${PRICE_USDC} USDC per request
-
-Metadata:
-- Image: ${AGENT_IMAGE_URL}
-- Skills: ${AGENT_SKILLS}  
-- Domains: ${AGENT_DOMAINS}
 
 Credentials:
 - Wallet Private Key: ${EVM_PRIVATE_KEY}
@@ -234,16 +224,6 @@ Before sending, verify you've filled in:
 - [ ] PRICE_USDC - Price per request
 - [ ] EVM_PRIVATE_KEY - Your wallet key (keep secret!)
 
-**Optional:**
-- [ ] AGENT_IMAGE_URL - Icon/avatar
-- [ ] AGENT_SKILLS - Capabilities (e.g., "data/weather, api/forecast")
-- [ ] AGENT_DOMAINS - Categories (e.g., "weather, climate")
-
-**You do NOT need to fill:**
-- ❌ PORT - AI will choose and explain
-- ❌ PUBLIC_IP - AI will provide instructions
-- ❌ MCP_URL - Not needed for basic creation
-
 ---
 
 ## 💡 Example Configuration
@@ -254,9 +234,6 @@ Before sending, verify you've filled in:
 - ENDPOINT_NAME: "weather"
 - PRICE_USDC: "0.05"
 - EVM_PRIVATE_KEY: "0xabc123..." (never share!)
-- AGENT_IMAGE_URL: "https://example.com/weather-icon.png"
-- AGENT_SKILLS: "data/weather, api/forecast, location/geocoding"
-- AGENT_DOMAINS: "weather, climate, forecasting"
 
 ---
 
