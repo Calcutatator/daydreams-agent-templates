@@ -11,72 +11,38 @@ Compatible with: Moltbot, Clawdbot, Claude, and other AI assistants
 **Fill in these details about the agent YOU want to create:**
 
 ```bash
-# ============================================
-# YOUR AGENT DEFINITION
-# ============================================
-
-# Core Identity
-AGENT_NAME=""
 # What should your agent be called?
-# Example: "Weather Oracle", "Crypto Tracker", "Image Analyzer"
+AGENT_NAME=""
 
+# What does your agent do? (Be specific)
 AGENT_DESCRIPTION=""
-# What does your agent do? Be specific.
-# Example: "Provides real-time weather forecasts and conditions for any location using OpenWeatherMap API"
-# Example: "Analyzes images using AI to detect objects, text, and sentiment"
-# Example: "Tracks cryptocurrency prices across multiple exchanges in real-time"
 
+# Main API endpoint name (lowercase, no spaces)
 ENDPOINT_NAME=""
-# What's the main API endpoint? (lowercase, no spaces)
-# Example: "weather", "analyze", "track", "convert"
-# This becomes: POST /{ENDPOINT_NAME}
 
-# Pricing
+# Price per request in USDC (e.g., "0.05")
 PRICE_USDC=""
-# How much to charge per request in USDC?
-# Example: "0.01" (1 cent), "0.05" (5 cents), "0.10" (10 cents)
-# Consider your costs + desired margin
 
-# Deployment
+# Port to run on (e.g., "8090")
 PORT=""
-# Which port should your agent run on?
-# Example: "8090", "8091", "8092", "8093"
-# Make sure it's not already in use
 
+# Your server's public IP (can fill later)
 PUBLIC_IP=""
-# Your server's public IP address (fill in after deployment, or leave as placeholder)
-# Example: "1.2.3.4", or leave as "YOUR_PUBLIC_IP" for now
 
-# Credentials
+# Your Ethereum wallet private key (KEEP SECRET!)
 EVM_PRIVATE_KEY=""
-# Your Ethereum wallet private key (0x...)
-# This wallet will receive USDC payments
-# KEEP THIS SECRET - never share or commit to git!
 
+# Your xGate MCP URL (from https://xgate.run/)
 MCP_URL=""
-# Your xGate MCP URL (get from https://xgate.run/)
-# Example: "https://mcp.xgate.run/user/wallet%3A1%3A0x.../mcp?token=..."
 
-# ============================================
-# OPTIONAL (Improves Discoverability)
-# ============================================
-
+# OPTIONAL - Icon URL
 AGENT_IMAGE_URL=""
-# URL to an image/icon for your agent
-# Example: "https://example.com/my-agent-icon.png"
-# Can use services like imgur, github raw, or your own server
 
+# OPTIONAL - Skills (e.g., "data/weather, api/forecast")
 AGENT_SKILLS=""
-# Comma-separated list of skills/capabilities
-# Example: "data/weather, api/forecast, location/geocoding"
-# Example: "ai/vision, image/analysis, object/detection"
-# Format: category/skill
 
+# OPTIONAL - Domains (e.g., "weather, climate")
 AGENT_DOMAINS=""
-# Comma-separated list of domains/categories
-# Example: "weather, climate, forecasting"
-# Example: "crypto, finance, trading"
-# Helps users find your agent
 ```
 
 ---
